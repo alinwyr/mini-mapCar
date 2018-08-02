@@ -1,0 +1,15 @@
+<!--index.wxml-->
+<view class="container">
+  <view bindtap="bindViewTap">
+    <user avatarUrl="{{userInfo.avatarUrl}}" nickName="{{userInfo.nickName}}"></user>
+  </view>
+  <view class="motto">
+    <image class="face" src="../../images/face.png" background-size="cover"></image>
+	  <text class="user-motto">{{motto}}</text>
+  </view>
+  <view class="powered">
+    <text>{{powered.by}}哈喽121</text>
+    <button  wx:if="{{canIUse}}" bindgetuserinfo="bindGetUserInfo" open-type="getUserInfo">授权登录</button>
+    <view wx:else>请升级微信版本</view>
+  </view>
+</view>
