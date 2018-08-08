@@ -5,6 +5,7 @@
   "scripts": {
     "webpack": "webpack",
     "dev": "cross-env API_HOST=alpha webpack --watch ",
+    "mock": "cross-env API_HOST=mock webpack --watch & node ./mock/index.js ",
     "dev-b": "cross-env API_HOST=beta webpack --watch ",
     "build": "cross-env API_HOST=alpha webpack --env --env.min",
     "build-b": "cross-env API_HOST=beta webpack --env --env.min"
@@ -16,6 +17,7 @@
     "node": ">=4.2.1"
   },
   "devDependencies": {
+    "express": "^4.16.3",
     "babel-core": "^6.24.0",
     "babel-loader": "^7.1.1",
     "babel-minify-webpack-plugin": "^0.3.0",
@@ -40,6 +42,7 @@
     "babel-preset-env": "^1.7.0",
     "babel-runtime": "^6.23.0",
     "es6-promise": "^4.1.0",
+    "faker": "^4.1.0",
     "lodash": "^4.17.4"
   }
 }
