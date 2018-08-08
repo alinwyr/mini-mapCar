@@ -1,6 +1,6 @@
 webpackJsonp([2],{
 
-/***/ 161:
+/***/ 164:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -31,11 +31,9 @@ Page({
     onLoad: function onLoad() {
         var _this = this;
 
-        app.request("aa", {
+        app.request("user", {
             name: 11
         }).then(function (res) {
-            console.log(2);
-            console.log(res);
             _this.setData({
                 motto: res.motto
             });
@@ -45,4 +43,4 @@ Page({
 
 /***/ })
 
-},[161]); function webpackJsonp() { require("./../../common.js"); wx.webpackJsonp.apply(null, arguments); };
+},[164]); function webpackJsonp() { require("./../../common.js"); wx.webpackJsonp.apply(null, arguments); };

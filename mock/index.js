@@ -1,15 +1,10 @@
 const express = require('express')
 const path = require("path")
-const fs = require("fs")
-const User = require('./api/user/user.js')
 
 const app = express();
 const port = 4000
 
-
-var files = [],dirs = [];
-
-app.get('/api/*', (req, res,next) => {
+app.get('/api/*', (req, res) => {
     let pathfile = req.path;
     try{
         let json = require(path.join(__dirname,pathfile + '.js'));

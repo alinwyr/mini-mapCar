@@ -10,11 +10,9 @@ Page({
 		canIUse: wx.canIUse('button.open-type.getUserInfo')
 	},
 	onLoad() {
-        app.request("aa",{
+        app.request("user",{
             name:11
         }).then(res=>{
-            console.log(2)
-            console.log(res)
             this.setData({
                 motto:res.motto
             })

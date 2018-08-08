@@ -31,15 +31,15 @@ var _fetch = __webpack_require__(127);
 
 var _fetch2 = _interopRequireDefault(_fetch);
 
-var _navigator = __webpack_require__(152);
+var _navigator = __webpack_require__(155);
 
 var _navigator2 = _interopRequireDefault(_navigator);
 
-var _event = __webpack_require__(156);
+var _event = __webpack_require__(159);
 
 var _event2 = _interopRequireDefault(_event);
 
-var _system = __webpack_require__(157);
+var _system = __webpack_require__(160);
 
 var _system2 = _interopRequireDefault(_system);
 
@@ -73,8 +73,8 @@ App({
 	},
 
 
-	// 获取用户信息 ，参数tempUser只给判断是否临时车主用
-	getUserInfo: function getUserInfo(cb, tempUser) {
+	// 获取用户信息 
+	getUserInfo: function getUserInfo(cb) {
 
 		var _this = this;
 		var globalData = this.globalData;
