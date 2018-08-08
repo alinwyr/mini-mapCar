@@ -1,7 +1,7 @@
 {
-  "name": "orderbai",
-  "version": "1.0.0",
-  "description": "orderBai",
+  "name": "miniMapCar",
+  "version": "1.0.1",
+  "description": "miniMapCar",
   "scripts": {
     "webpack": "webpack",
     "dev": "cross-env API_HOST=alpha webpack --watch ",

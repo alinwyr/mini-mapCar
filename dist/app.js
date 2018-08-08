@@ -1,15 +1,15 @@
 webpackJsonp([1],{
 
-/***/ 71:
+/***/ 70:
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(72);
-module.exports = __webpack_require__(74);
+__webpack_require__(71);
+module.exports = __webpack_require__(73);
 
 
 /***/ }),
 
-/***/ 74:
+/***/ 73:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -23,23 +23,23 @@ var _extends2 = __webpack_require__(57);
 
 var _extends3 = _interopRequireDefault(_extends2);
 
-var _isEmpty2 = __webpack_require__(102);
+var _isEmpty2 = __webpack_require__(101);
 
 var _isEmpty3 = _interopRequireDefault(_isEmpty2);
 
-var _fetch = __webpack_require__(128);
+var _fetch = __webpack_require__(127);
 
 var _fetch2 = _interopRequireDefault(_fetch);
 
-var _navigator = __webpack_require__(162);
+var _navigator = __webpack_require__(152);
 
 var _navigator2 = _interopRequireDefault(_navigator);
 
-var _event = __webpack_require__(166);
+var _event = __webpack_require__(156);
 
 var _event2 = _interopRequireDefault(_event);
 
-var _system = __webpack_require__(167);
+var _system = __webpack_require__(157);
 
 var _system2 = _interopRequireDefault(_system);
 
@@ -180,4 +180,4 @@ App({
 
 /***/ })
 
-},[71]); function webpackJsonp() { require("./common.js"); wx.webpackJsonp.apply(null, arguments); };
+},[70]); function webpackJsonp() { require("./common.js"); wx.webpackJsonp.apply(null, arguments); };
