@@ -3,6 +3,8 @@ import toasts from '../utils/toasts';
 import apiMapping from './apiMapping';
 import errorCode from './errorCode';
 import apiVersion from './apiVersion'
+import request1 from 'superagent/lib/client';
+import mocker from 'superagent-mocker'; // eslint-disable-line
 
 const NETWORK_FAIL_TIPS = '网络出错';
 
@@ -32,15 +34,18 @@ const request = (apiName, reqParams ,  options = {} ) => {
 
     promise = new Promise((resolve, reject) => {
         // 若不支持abort，则会返回undefined
+        let targetApiUrl = GLOBAL_API_HOST + apiMapping[apiName];
         requestTask = wx.request({
-            url: GLOBAL_API_HOST + apiMapping[apiName],
+            url: targetApiUrl,
             data,
             dataType: options.dataType || 'json',
             method: options.method || 'GET',
             header: options.header || { 'content-type': 'application/json' },
             success: res => {
                 const json = res.data;
+                console.log(res.data)
                 if (json.errcode == 0) {
+                    console.log(json.data)
                     resolve(json.data);
                 } else {
                     isNeedErrTips && showErrTips(json);
@@ -57,6 +62,10 @@ const request = (apiName, reqParams ,  options = {} ) => {
     if (isNeedAbort) {
         return { promise, requestTask }
     }
+    // console.log(promise)
+    promise.then((res)=>{
+        console.log(12312,res)
+    })
     return promise;
 }
 

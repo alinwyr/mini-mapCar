@@ -9,14 +9,16 @@ Page({
 		userInfo: {},
 		canIUse: wx.canIUse('button.open-type.getUserInfo')
 	},
-	// 事件处理函数
-	bindViewTap() {
-		wx.navigateTo({
-			url: '../user/user',
-		});
-	},
 	onLoad() {
-    
+        app.request("aa",{
+            name:11
+        }).then(res=>{
+            console.log(2)
+            console.log(res)
+            this.setData({
+                motto:res.motto
+            })
+        })
        
 	}
 });

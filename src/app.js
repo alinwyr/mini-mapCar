@@ -23,7 +23,7 @@ App({
 	},
 	// 自定义 request
     request(apiName, reqParams, ...option) {
-        request(apiName, reqParams, ...option);
+        return request(apiName, reqParams, ...option);
 	},
 
 	// 获取用户信息 ，参数tempUser只给判断是否临时车主用
@@ -124,3 +124,4 @@ App({
         new Event().install(this);
     }
 });
+
