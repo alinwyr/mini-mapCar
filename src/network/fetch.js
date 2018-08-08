@@ -3,8 +3,6 @@ import toasts from '../utils/toasts';
 import apiMapping from './apiMapping';
 import errorCode from './errorCode';
 import apiVersion from './apiVersion'
-import request1 from 'superagent/lib/client';
-import mocker from 'superagent-mocker'; // eslint-disable-line
 
 const NETWORK_FAIL_TIPS = '网络出错';
 
