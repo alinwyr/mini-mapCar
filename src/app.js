@@ -26,8 +26,8 @@ App({
         return request(apiName, reqParams, ...option);
 	},
 
-	// 获取用户信息 ，参数tempUser只给判断是否临时车主用
-	getUserInfo(cb, tempUser) {
+	// 获取用户信息 
+	getUserInfo(cb) {
 
 		const _this = this;
 		const { globalData } = this;

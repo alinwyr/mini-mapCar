@@ -8,7 +8,7 @@ import {
 import WXAppWebpackPlugin, { Targets } from 'wxapp-webpack-plugin';
 import MinifyPlugin from 'babel-minify-webpack-plugin';
 
-var constant = require('./configs/constants')
+// var constant = require('./configs/constants')
 
 const { NODE_ENV, LINT , API_HOST} = process.env;
 const isDev = NODE_ENV !== 'production';
@@ -27,9 +27,7 @@ const relativeFileLoader = (ext = '[ext]') => ({
 
 export default (env = {}) => {
 	const min = env.min;
-	const target = env.target || 'Wechat';
-	// const isWechat = env.target !== 'Alipay';
-	// const isAlipay = !isWechat;
+	const target = env.target;
 	return {
 		entry: {
 			app: [
@@ -100,7 +98,7 @@ export default (env = {}) => {
 				NODE_ENV: 'development'
 			}),
 			new DefinePlugin({
-				GLOBAL_API_HOST:JSON.stringify(constant.default.API_HOST[API_HOST])
+				GLOBAL_API_HOST:JSON.stringify(API_HOST)
 			}),
 			new WXAppWebpackPlugin({
 				clear: !isDev
