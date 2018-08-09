@@ -2,17 +2,14 @@ import { resolve } from 'path';
 import {
 	DefinePlugin,	//允许在编译时配置全局常量
 	EnvironmentPlugin, //使用DefinePluginon process.env键的 速记
-	IgnorePlugin,  // 从捆绑中排除某些模块
 	optimize //在优化阶段开始时触发
 } from 'webpack';
-import WXAppWebpackPlugin, { Targets } from 'wxapp-webpack-plugin';
+import WXAppWebpackPlugin from 'wxapp-webpack-plugin';
 import MinifyPlugin from 'babel-minify-webpack-plugin';
 
-// var constant = require('./configs/constants')
-
-const { NODE_ENV, LINT , API_HOST} = process.env;
+const { NODE_ENV , API_HOST} = process.env;
 const isDev = NODE_ENV !== 'production';
-const shouldLint = !!LINT && LINT !== 'false';
+const shouldLint = false;
 const srcDir = resolve('src');
 
 
@@ -27,11 +24,9 @@ const relativeFileLoader = (ext = '[ext]') => ({
 
 export default (env = {}) => {
 	const min = env.min;
-	const target = env.target;
 	return {
 		entry: {
 			app: [
-				`es6-promise/dist/es6-promise.auto${isDev ? '.min' : ''}.js`,
 				'./src/app.js'
 			]
 		},
@@ -40,7 +35,7 @@ export default (env = {}) => {
 			publicPath: '/',
 			path: resolve('dist')
 		},
-		target: Targets[target],
+		// target: Targets[target],   不设置了。默认是微信小程序
 		module: {
 			rules: [
 				{
@@ -104,10 +99,9 @@ export default (env = {}) => {
 				clear: !isDev
 			}),
 			new optimize.ModuleConcatenationPlugin(),
-			new IgnorePlugin(/vertx/),
 			min && new MinifyPlugin()
 		].filter(Boolean),
-		// devtool: isDev ? 'source-map' : false,
+		// devtool: isDev ? 'source-map' : false,  不设置了，source-map对我用处不大
 		resolve: {
 			modules: [resolve(__dirname, 'src'), 'node_modules']
 		},
