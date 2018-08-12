@@ -9,7 +9,7 @@ import MinifyPlugin from 'babel-minify-webpack-plugin';
 
 const { NODE_ENV , API_HOST} = process.env;
 const isDev = NODE_ENV !== 'production';
-const shouldLint = false;
+const shouldLint = true;
 const srcDir = resolve('src');
 
 
@@ -27,6 +27,7 @@ export default (env = {}) => {
 	return {
 		entry: {
 			app: [
+				// `es6-promise/dist/es6-promise.auto${isDev ? '.min' : ''}.js`,
 				'./src/app.js'
 			]
 		},
