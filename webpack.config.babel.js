@@ -7,9 +7,9 @@ import {
 import WXAppWebpackPlugin from 'wxapp-webpack-plugin';
 import MinifyPlugin from 'babel-minify-webpack-plugin';
 
-const { NODE_ENV , API_HOST} = process.env;
+const { NODE_ENV, LINT , API_HOST} = process.env;
 const isDev = NODE_ENV !== 'production';
-const shouldLint = true;
+const shouldLint = !!LINT && LINT !== 'false';
 const srcDir = resolve('src');
 
 
@@ -27,7 +27,6 @@ export default (env = {}) => {
 	return {
 		entry: {
 			app: [
-				// `es6-promise/dist/es6-promise.auto${isDev ? '.min' : ''}.js`,
 				'./src/app.js'
 			]
 		},

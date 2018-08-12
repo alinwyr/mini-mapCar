@@ -4,10 +4,14 @@
   "description": "miniMapCar",
   "scripts": {
     "webpack": "webpack",
-    "mock": "cross-env API_HOST=mock webpack --watch & node ./mock/index.js ",
-    "dev": "cross-env API_HOST=alpha webpack --watch ",
-    "dev-b": "cross-env API_HOST=beta webpack --watch ",
-    "dev-r": "cross-env API_HOST=release webpack --watch ",
+	"mock": "cross-env API_HOST=mock webpack --watch & node ./mock/index.js ",
+	"mock:lint": "cross-env LINT=true API_HOST=mock webpack --watch & node ./mock/index.js ",
+	"dev": "cross-env API_HOST=alpha webpack --watch ",
+	"dev:lint": "cross-env LINT=true API_HOST=alpha webpack --watch",
+	"dev-b": "cross-env API_HOST=beta webpack --watch ",
+	"dev-b:lint": "cross-env LINT=true  API_HOST=beta webpack --watch ",
+	"dev-r": "cross-env API_HOST=release webpack --watch ",
+	"dev-r:lint": "cross-env LINT=true API_HOST=release webpack --watch ",
     "build": "cross-env API_HOST=alpha NODE_ENV=production webpack --env.min",
     "build-b": "cross-env API_HOST=beta NODE_ENV=production webpack --env.min",
     "build-r": "cross-env API_HOST=release NODE_ENV=production webpack --env.min"
