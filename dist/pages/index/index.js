@@ -9,14 +9,17 @@ webpackJsonp([4],{
 // 获取应用实例
 Page({
   data: {
-    motto: 'Hello World',
-    userInfo: {},
-    canIUse: wx.canIUse('button.open-type.getUserInfo')
+    motto: 'Hello createWxapp!'
   },
   // 事件处理函数
-  bindViewTap: function bindViewTap() {
+  bindViewUser: function bindViewUser() {
     wx.navigateTo({
       url: '../user/user'
+    });
+  },
+  bindViewLogs: function bindViewLogs() {
+    wx.navigateTo({
+      url: '../logs/logs'
     });
   },
   onLoad: function onLoad() {}

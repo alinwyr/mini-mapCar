@@ -1,14 +1,17 @@
 // 获取应用实例
 Page({
   data: {
-    motto: 'Hello World',
-    userInfo: {},
-    canIUse: wx.canIUse('button.open-type.getUserInfo')
+    motto: 'Hello createWxapp!'
   },
   // 事件处理函数
-  bindViewTap () {
+  bindViewUser () {
     wx.navigateTo({
       url: '../user/user'
+    })
+  },
+  bindViewLogs () {
+    wx.navigateTo({
+      url: '../logs/logs'
     })
   },
   onLoad () {

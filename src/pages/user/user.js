@@ -4,16 +4,14 @@ const app = getApp() //  eslint-disable-line no-undef
 
 Page({
   data: {
-    motto: 'Hello World',
-    userInfo: {},
-    canIUse: wx.canIUse('button.open-type.getUserInfo')
+    userInfo: {}
   },
   onLoad () {
     app.request('user', {
-      name: 11
+      name: 'test'
     }).then(res => {
       this.setData({
-        motto: res.motto
+        userInfo: res
       })
     })
   }

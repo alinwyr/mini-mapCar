@@ -1,13 +1,11 @@
 <!--index.wxml-->
 <view class="container">
-  <view bindtap="bindViewTap">
-  </view>
   <view class="motto">
-    <image class="face" src="../../images/face.png" background-size="cover"></image>
-	  <text class="user-motto">{{motto}}</text>
+    <image class="face" src="./../../images/face.png" background-size="cover"></image>
+	<view class="user-motto">{{motto}}</view>
   </view>
   <view class="powered">
-    <text>{{powered.by}}哈喽121</text>
-    <button  bindtap="bindViewTap" >test</button>
+    <button  bindtap="bindViewUser" >user</button>
+	<button  bindtap="bindViewLogs" >logs</button>
   </view>
 </view>

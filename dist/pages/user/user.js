@@ -12,18 +12,16 @@ var app = getApp(); //  eslint-disable-line no-undef
 
 Page({
   data: {
-    motto: 'Hello World',
-    userInfo: {},
-    canIUse: wx.canIUse('button.open-type.getUserInfo')
+    userInfo: {}
   },
   onLoad: function onLoad() {
     var _this = this;
 
     app.request('user', {
-      name: 11
+      name: 'test'
     }).then(function (res) {
       _this.setData({
-        motto: res.motto
+        userInfo: res
       });
     });
   }

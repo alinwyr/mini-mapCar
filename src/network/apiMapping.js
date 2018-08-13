@@ -1,3 +1,3 @@
 export default {
-  user: 'api/aa/aa'
+  user: 'api/test/test'
 }
